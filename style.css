@@ -203,6 +203,15 @@ button[data-type="secondary"][data-fullwidth] {
   align-items: var(--cluster-align, center);
 }
 
+.overlap {
+  display: grid;
+
+  > *,
+  &::before {
+    grid-area: 1/1/-1/-1;
+  }
+}
+
 .challenge-wrapper {
   --_max-width: var(--max-width, 320px);
 
@@ -269,4 +278,13 @@ button[data-type="secondary"][data-fullwidth] {
 .plan__change {
   font: var(--typography-plan-link);
   margin-inline-start: auto;
+}
+
+.wave {
+  width: 100%;
+  height: 194px;
+
+  @media (min-width: 450px) {
+    height: 437px;
+  }
 }
