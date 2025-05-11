@@ -1,0 +1,155 @@
+:root {
+  /* Tier 1 */
+  --white: hsl(0, 100%, 100%); /* card BG, knockout text */
+  --blue-100: hsl(225, 100%, 98%); /* plan BG */
+  --blue-200: hsl(225, 100%, 94%); /* default BG, icon BG */
+  --blue-300: hsl(224, 23%, 55%); /* default text */
+  --blue-500: hsl(245, 75%, 52%); /* button BG, default shadow, plan link */
+  --blue-600: hsl(228, 87%, 39%); /* button shadow */
+  --blue-800: hsl(223, 47%, 23%); /* heading text, secondary hover */
+  --purple-400: hsl(245, 83%, 68%); /* hover states */
+
+  --font-family-sans: "Red Hat Display", sans-serif;
+
+  --font-size-28: 28px;
+  --font-size-22: 22px;
+  --font-size-16: 16px;
+  --font-size-15: 15px;
+  --font-size-14: 14px;
+  --font-size-13: 13px;
+
+  /* @link https://utopia.fyi/clamp/calculator?a=375,450,22—28|15—16|14—16|13—14&p=font-size */
+  --font-size-22-28: clamp(
+    var(--font-size-22),
+    -0.5rem + 8vw,
+    var(--font-size-28)
+  );
+  --font-size-15-16: clamp(
+    var(--font-size-15),
+    0.625rem + 1.3333vw,
+    var(--font-size-16)
+  );
+  --font-size-14-16: clamp(
+    var(--font-size-14),
+    0.25rem + 2.6667vw,
+    var(--font-size-16)
+  );
+  --font-size-13-14: clamp(
+    var(--font-size-13),
+    0.5rem + 1.3333vw,
+    var(--font-size-14)
+  );
+
+  --font-weight-500: 500;
+  --font-weight-700: 700;
+  --font-weight-900: 900;
+
+  --line-height-000: normal;
+  --line-height-162: 1.625;
+
+  --space-100: 8px;
+  --space-200: 16px;
+  --space-250: 20px;
+  --space-300: 24px;
+  --space-400: 32px;
+  --space-600: 48px;
+
+  --space-75: 6px;
+  --space-225: 18px;
+  --space-575: 46px;
+
+  --space-16-24: clamp(var(--space-200), -1.5rem + 10.6667vw, var(--space-300));
+  --space-24-48: clamp(var(--space-300), -6rem + 32vw, var(--space-600));
+  --space-24-32: clamp(var(--space-300), -1rem + 10.6667vw, var(--space-400));
+  --space-32-48: clamp(var(--space-400), -3rem + 21.3333vw, var(--space-600));
+  --space-24-20: clamp(var(--space-300), 2.75rem + -5.3333vw, var(--space-250));
+
+  --radius-10: 10px;
+  --radius-20: 20px;
+
+  /* Tier 2 */
+
+  --color-background-default: var(--blue-200);
+  --color-background-card: var(--white);
+  --color-background-primary: var(--blue-100);
+  --color-background-button: var(--blue-500);
+  --color-background-button-hover: var(--purple-400);
+  --color-background-icon: var(--blue-200);
+
+  --color-content-default: var(--blue-300);
+  --color-content-strong: var(--blue-800);
+  --color-content-heading: var(--blue-800);
+  --color-content-knockout: var(--white);
+  --color-content-button-secondary: var(--blue-300);
+  --color-content-button-secondary-hover: var(--blue-800);
+  --color-content-link: var(--blue-500);
+  --color-content-link-hover: var(--purple-400);
+
+  --shadow-card: 0 40px 40px -20px hsl(from var(--blue-500) h s l / 15.18%);
+  --shadow-button: 0 20px 20px hsl(from var(--blue-600) h s l / 19.03%);
+
+  --typography-heading: var(--font-weight-900) var(--font-size-22-28)
+    var(--font-family-sans);
+  --typography-body: var(--font-weight-500) var(--font-size-15-16) /
+    var(--line-height-162) var(--font-family-sans);
+  --typography-plan-heading: var(--font-weight-900) var(--font-size-14-16)
+    var(--font-family-sans);
+  --typography-plan-price: var(--font-weight-500) var(--font-size-14-16)
+    var(--font-family-sans);
+  --typography-plan-link: var(--font-weight-700) var(--font-size-13-14)
+    var(--font-family-sans);
+  --typography-button: var(--font-weight-900) var(--font-size-15)
+    var(--font-family-sans);
+
+  --radius-sm: var(--radius-10);
+  --radius-lg: var(--radius-20);
+
+  --card-image-height-sm: 160px;
+  --card-image-height-lg: 220px;
+
+  --card-image-height: clamp(
+    var(--card-image-height-sm),
+    -8.75rem + 80vw,
+    var(--card-image-height-lg)
+  );
+
+  --max-width: 450px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: var(--typography-body);
+  color: var(--color-content-default);
+  background-color: var(--color-background-default);
+}
+
+h2 {
+  font: var(--typography-heading);
+  color: var(--color-content-heading);
+}
+
+strong {
+  font-weight: var(--font-weight-900);
+  color: var(--color-content-strong);
+}
+
+picture,
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  font-weight: var(--font-weight-700);
+  color: var(--color-content-link);
+
+  &:hover {
+    color: var(--color-content-link-hover);
+  }
+}
