@@ -153,3 +153,40 @@ a {
     color: var(--color-content-link-hover);
   }
 }
+
+button {
+  cursor: pointer;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-background-button);
+  color: var(--color-content-knockout);
+  font: var(--typography-button);
+  padding: var(--space-200);
+  box-shadow: var(--shadow-button);
+
+  &:hover {
+    background-color: var(--color-background-button-hover);
+  }
+}
+
+button[data-type="secondary"] {
+  padding: 0;
+  background-color: transparent;
+  color: var(--color-content-button-secondary);
+  box-shadow: none;
+
+  &:hover {
+    background-color: transparent;
+    color: var(--color-content-button-secondary-hover);
+  }
+}
+
+button[data-fullwidth] {
+  display: block;
+  width: 100%;
+}
+
+button[data-type="secondary"][data-fullwidth] {
+  width: fit-content;
+  margin-inline: auto;
+}
