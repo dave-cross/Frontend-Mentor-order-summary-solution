@@ -240,3 +240,33 @@ button[data-type="secondary"][data-fullwidth] {
 .card__content > h2 + * {
   --flow-space: var(--space-200);
 }
+
+.plan {
+  --flow-space: var(--space-24-20);
+  --cluster-space: var(--space-250);
+  text-align: left;
+  padding: var(--space-16-24);
+  background-color: var(--color-background-primary);
+  border-radius: var(--radius-sm);
+}
+
+.plan__rate {
+  --flow-space: clamp(0.1875rem, -0.75rem + 4vw, 0.375rem);
+}
+
+.plan__rate > * {
+  display: block;
+}
+
+.plan__rate > strong {
+  font: var(--typography-plan-heading);
+}
+
+.plan__rate > data {
+  font: var(--typography-plan-price);
+}
+
+.plan__change {
+  font: var(--typography-plan-link);
+  margin-inline-start: auto;
+}
