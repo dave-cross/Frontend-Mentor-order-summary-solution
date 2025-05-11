@@ -2,8 +2,10 @@
   /* Tier 1 */
   --white: hsl(0, 100%, 100%); /* card BG, knockout text */
   --blue-100: hsl(225, 100%, 98%); /* plan BG */
-  --blue-200: hsl(225, 100%, 94%); /* default BG, icon BG */
-  --blue-300: hsl(224, 23%, 55%); /* default text */
+  --blue-200: hsl(225, 100%, 94%); /* default BG */
+  --blue-225: hsl(225, 100%, 92%); /* wave fill */
+  --blue-250: hsl(225, 76%, 93%); /* icon BG */
+  --blue-300: hsl(224, 23%, 55%); /* default text, icon fill */
   --blue-500: hsl(245, 75%, 52%); /* button BG, default shadow, plan link */
   --blue-600: hsl(228, 87%, 39%); /* button shadow */
   --blue-800: hsl(223, 47%, 23%); /* heading text, secondary hover */
@@ -74,7 +76,7 @@
   --color-background-primary: var(--blue-100);
   --color-background-button: var(--blue-500);
   --color-background-button-hover: var(--purple-400);
-  --color-background-icon: var(--blue-200);
+  --color-background-icon: var(--blue-250);
 
   --color-content-default: var(--blue-300);
   --color-content-strong: var(--blue-800);
@@ -84,6 +86,27 @@
   --color-content-button-secondary-hover: var(--blue-800);
   --color-content-link: var(--blue-500);
   --color-content-link-hover: var(--purple-400);
+  --color-content-icon: var(--blue-300);
+  --color-content-wave: var(--blue-225);
+
+  /* Alternates */
+  /* --color-background-default: seashell;
+  --color-background-card: var(--white);
+  --color-background-primary: lavenderblush;
+  --color-background-button: deeppink;
+  --color-background-button-hover: hotpink;
+  --color-background-icon: mistyrose;
+
+  --color-content-default: hotpink;
+  --color-content-strong: deeppink;
+  --color-content-heading: deeppink;
+  --color-content-knockout: var(--white);
+  --color-content-button-secondary: hotpink;
+  --color-content-button-secondary-hover: deeppink;
+  --color-content-link: deeppink;
+  --color-content-link-hover: hotpink;
+  --color-content-icon: hotpink;
+  --color-content-wave: deeppink; */
 
   --shadow-card: 0 40px 40px -20px hsl(from var(--blue-500) h s l / 15.18%);
   --shadow-button: 0 20px 20px hsl(from var(--blue-600) h s l / 19.03%);
@@ -259,6 +282,15 @@ button[data-type="secondary"][data-fullwidth] {
   border-radius: var(--radius-sm);
 }
 
+.plan__icon {
+  background-color: var(--color-background-icon);
+  border-radius: 50%;
+
+  path {
+    fill: var(--color-content-icon);
+  }
+}
+
 .plan__rate {
   --flow-space: clamp(0.1875rem, -0.75rem + 4vw, 0.375rem);
 }
@@ -286,5 +318,9 @@ button[data-type="secondary"][data-fullwidth] {
 
   @media (min-width: 450px) {
     height: 437px;
+  }
+
+  path {
+    fill: var(--color-content-wave);
   }
 }
